@@ -25,9 +25,9 @@ import re
 visited = set()
 base_urls = [
     # "https://www.loqate.com/developers/",
-    "https://support.loqate.com/"
+    "https://www.loqate.com/developers"
 ]
-allowed_domains = ['support.loqate.com']
+allowed_domains = ['']
 
 # Configure requests session
 session = requests.Session()
@@ -50,7 +50,7 @@ def is_valid_url(url):
     # Accept all paths on allowed domains
     return True
 
-def crawl(url, max_depth=2, delay=1.0):
+def crawl(url, max_depth=10, delay=1.0):
     """Crawl with depth control and politeness delay"""
     if url in visited or not is_valid_url(url):
         return

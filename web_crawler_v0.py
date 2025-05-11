@@ -49,7 +49,7 @@ def is_valid_url(url):
     
     return True
 
-def crawl(url, depth=0):
+def crawl(url, depth=10):
     """Crawl with depth control and politeness delay"""
     if url in visited or not is_valid_url(url) or depth > max_depth:
         return []
